@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Spin-off of "Project: Event invite"</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fdf6f0;
+            color: #4b4b4b;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .invite-container {
+            background-color: #fff8f2;
+            border: 2px dashed #ffa07a;
+            padding: 30px;
+            border-radius: 12px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #d2691e;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #8b4513;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.1em;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .rsvp-button {
+            background-color: #ff7f50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .rsvp-button:hover {
+            background-color: #e67348;
+        }
+        
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .modal {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .modal-content {
+            background: #fff8f2;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 60%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        #close-modal {
+            background-color: #ff7f50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        #close-modal:hover {
+            background-color: #e67348;
+        }
+        
+        #confirmation-modal {
+            display: none; 
+        }
+
+</style>
+</head>
+<body>
+
+    <div class="invite-container">
+        <h1>You're Invited!</h1>
+        <h2>🌼 Summer Garden Party 🌼</h2>
+
+        <p>The details:</p>
+        <ul>
+            <li><strong>Date:</strong> July 15, 2025</li>
+            <li><strong>Time:</strong> 4:00 PM – 9:00 PM</li>
+            <li><strong>Location:</strong> 374 Moteti Libarty, 0477 <a href="https://g.co/kgs/SmQe2UW">📍</a></li>
+            
+            <li><strong>Dress Code:</strong> Garden Chic 🌸</li>
+            <li><strong>Hosted by:</strong> Jan Kokobane</li>
+        </ul>
+
+        <button class="rsvp-button" id="button">RSVP Now</button>
+    </div>
+    
+    <div id="confirmation-modal" class="modal">
+    <div class="modal-content">
+        <h2>🎉 RSVP Confirmed!</h2>
+        <p>Thank you for confirming your attendance. We can't wait to see you at the event!</p>
+        <button id="close-modal">Close</button>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("button").addEventListener("click", function() {
+            document.getElementById("confirmation-modal").style.display = "flex";
+        });
+
+        document.getElementById("close-modal").addEventListener("click", function() {
+            document.getElementById("confirmation-modal").style.display = "none";
+        });
+    });
+</script>
+</body>
+</html>
